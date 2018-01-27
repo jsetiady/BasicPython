@@ -106,9 +106,7 @@ is_mahasiswa = True
 ```
 # Komentar dalam satu baris
 
-'''
-komentar dalam beberapa baris
-'''
+
 ```
  - Operasi aritmatika, termasuk +, -, *, /, **, dan %
  ```
