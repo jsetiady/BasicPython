@@ -93,20 +93,15 @@ Objek utama `pandas` yang digunakan pada workshop ini adalah DataFrame, yaitu se
 3. Install IDE PyCharm Community Edition. Unduh lewat https://www.jetbrains.com/pycharm/download/#section=mac
 
 ## Python Syntax
- - Variable dan tipe data
+ - Variable dan tipe data, comments
 ```
-nama = "Joko Widodo"
+nama = "Joko Widodo" # Komentar dalam satu baris
 umur = 23
 umur_dalam_hexadesimal = 0x17
 diskon = 0.15
 is_mahasiswa = True
-```
- - Whitespace: pemisah antar statement
- - Comments
-```
-name = "x" # Komentar dalam satu baris
 
-```
+
  - Operasi aritmatika, termasuk +, -, *, /, **, dan %
 
 ```
