@@ -104,12 +104,12 @@ is_mahasiswa = True
  - Whitespace: pemisah antar statement
  - Comments
 ```
-# Komentar dalam satu baris
-
+name = "x" # Komentar dalam satu baris
 
 ```
  - Operasi aritmatika, termasuk +, -, *, /, **, dan %
- ```
+
+```
 total_bayar = harga_total - (harga_total * diskon)
 ```
 
