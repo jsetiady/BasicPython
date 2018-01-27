@@ -42,20 +42,12 @@ Python telah menjadi bahasa pemrograman populer untuk analisis data. Dengan duku
 ## Python Essential Libraries untuk Analisis Data
 
 ### NumPy
-`NumPy`, singkatan dari Numerical Python, adalah package dasar untuk scientific computing dengan Python. `NumPy` menyediakan:
- - Multidimensional array object (*ndarray*)
- - Fungsi-fungsi untuk melakukan komputasi berbasis elemen dengan array atau operasi matematis antar array
- - Tools untuk membaca dan menulis datasets berbasis array
- - Operasi aljabar linear, transformasi Foirier, dan random number generation
- - Tools untuk mengintegrasikan kode C, C++, dan kode Fortean ke Python
+Mengelola array dan array multidimensi. Operasi vektor dan matriks.
 
-Selain kemampuan pemrosesan array-nya, kegunaan utama `NumPy` terkait analisis data adalah sebagai container untuk data agar bisa dilewatkan ke berbagai algoritma. Untuk data numerik, array `NumPy` lebih efisien dibandingkan dengan array yang built-in pada struktur data Python.
+### Pandas
+Anggap saja Pandas adalah spreadsheet namun tidak memiliki GUI 
+Untuk mengolah data seperti join, distinct, group by, agregasi, dan teknik seperti pada SQL
 
-
-### pandas
-Nama `pandas`  diturunkan dari panel data, yaitu economic term untuk multidimensional structured data sets. Nama `pandas` juga mengandung makna *Python data analysis*.
-`pandas` menyediakan struktur data dan fungsi yang dirancang agar menganalisis data yang terstruktur menjadi lebih cepat dan mudah. pandas adalah salah satu komposisi utama yang membuat Python menjadi bahasa pemrograman yang powerful untuk analisis data.
-Objek utama `pandas` yang digunakan pada workshop ini adalah DataFrame, yaitu sebuah struktur data dua dimensi, tabular, dan column-oriented, dengan label pada baris dan kolomnya. Contoh DataFrame adalah sebagai berikut:
 
      >>> frame
       total_bill  tip   sex   smoker  day time  size
@@ -70,20 +62,17 @@ Objek utama `pandas` yang digunakan pada workshop ini adalah DataFrame, yaitu se
     9 15.04   1.96  Male  No    Sun Dinner  2
     10  14.78   3.23  Male  No    Sun Dinner  2
 
-`pandas` juga punya kemampuan manipulasi data dari spreadsheets dan basis data relasional (seperti SQL). 
+### Matplotlib
+Visualisasi data
 
-### matplotlib
-`matplotlib` adalah librari Python yang populer untuk menghasilkan plots dan visualisasi data 2D. `matplotlib` menyediakan fitur untuk dapat secara interaktif (plot) menggambar data, dan melakukan eksplorasi.
+### Scipy
+Menangani operasi aljabar dan matriks serta operasi matematika lainya
 
-### SciPy
-`SciPy` adalah koleksi dari package-package untuk permasalahan standar di scientific computing. Beberapa package pada SciPy termasuk:
-- `scipy.integrate`: integrasi numerik dan solvers untuk numerical integration routines and solvers untuk masalah persamaan differensial
-- `scipy.linalg`: aljabar linear dan dekomposisi matriks
-- `scipy.optimize`: fungsi optimisasi dan algoritma pencarian akar  
-- `scipy.signal`: tools untuk pemrosesan signal
-- `scipy.sparse`: sparse matrices and sparse linear system solvers
-- `scipy.stats`: distribusi kontinyu dan diskrit standar (density functions, samplers, continuous distribution functions), dan bermacam-macam pengujian statistik
-- `scipy.weave`: tool untuk menggunakan fitur inline kode C++ untuk mengakselerasi komputasi array
+
+Penjelasan lebih detil lihat di section paling bawah.
+
+Read more:
+https://www.codepolitan.com/5-library-python-untuk-data-science-59b774b6cad97
 
 # Basic Python
 ## Instalasi
@@ -798,6 +787,53 @@ Melakukan eksplorasi statistik dasar
 
 
 
+
+
+## [Detailed] Python Essential Libraries untuk Analisis Data
+
+### NumPy
+`NumPy`, singkatan dari Numerical Python, adalah package dasar untuk scientific computing dengan Python. `NumPy` menyediakan:
+ - Multidimensional array object (*ndarray*)
+ - Fungsi-fungsi untuk melakukan komputasi berbasis elemen dengan array atau operasi matematis antar array
+ - Tools untuk membaca dan menulis datasets berbasis array
+ - Operasi aljabar linear, transformasi Foirier, dan random number generation
+ - Tools untuk mengintegrasikan kode C, C++, dan kode Fortean ke Python
+
+Selain kemampuan pemrosesan array-nya, kegunaan utama `NumPy` terkait analisis data adalah sebagai container untuk data agar bisa dilewatkan ke berbagai algoritma. Untuk data numerik, array `NumPy` lebih efisien dibandingkan dengan array yang built-in pada struktur data Python.
+
+
+### pandas
+Nama `pandas`  diturunkan dari panel data, yaitu economic term untuk multidimensional structured data sets. Nama `pandas` juga mengandung makna *Python data analysis*.
+`pandas` menyediakan struktur data dan fungsi yang dirancang agar menganalisis data yang terstruktur menjadi lebih cepat dan mudah. pandas adalah salah satu komposisi utama yang membuat Python menjadi bahasa pemrograman yang powerful untuk analisis data.
+Objek utama `pandas` yang digunakan pada workshop ini adalah DataFrame, yaitu sebuah struktur data dua dimensi, tabular, dan column-oriented, dengan label pada baris dan kolomnya. Contoh DataFrame adalah sebagai berikut:
+
+     >>> frame
+      total_bill  tip   sex   smoker  day time  size
+    1 16.99   1.01  Female  No    Sun Dinner  2
+    2 10.34   1.66  Male  No    Sun Dinner  3
+    3 21.01   3.5   Male  No    Sun Dinner  3
+    4 23.68   3.31  Male  No    Sun Dinner  2
+    5 24.59   3.61  Female  No    Sun Dinner  4
+    6 25.29   4.71  Male  No    Sun Dinner  4
+    7 8.77    2   Male  No    Sun Dinner  2
+    8 26.88   3.12  Male  No    Sun Dinner  4
+    9 15.04   1.96  Male  No    Sun Dinner  2
+    10  14.78   3.23  Male  No    Sun Dinner  2
+
+`pandas` juga punya kemampuan manipulasi data dari spreadsheets dan basis data relasional (seperti SQL). 
+
+### matplotlib
+`matplotlib` adalah librari Python yang populer untuk menghasilkan plots dan visualisasi data 2D. `matplotlib` menyediakan fitur untuk dapat secara interaktif (plot) menggambar data, dan melakukan eksplorasi.
+
+### SciPy
+`SciPy` adalah koleksi dari package-package untuk permasalahan standar di scientific computing. Beberapa package pada SciPy termasuk:
+- `scipy.integrate`: integrasi numerik dan solvers untuk numerical integration routines and solvers untuk masalah persamaan differensial
+- `scipy.linalg`: aljabar linear dan dekomposisi matriks
+- `scipy.optimize`: fungsi optimisasi dan algoritma pencarian akar  
+- `scipy.signal`: tools untuk pemrosesan signal
+- `scipy.sparse`: sparse matrices and sparse linear system solvers
+- `scipy.stats`: distribusi kontinyu dan diskrit standar (density functions, samplers, continuous distribution functions), dan bermacam-macam pengujian statistik
+- `scipy.weave`: tool untuk menggunakan fitur inline kode C++ untuk mengakselerasi komputasi array
 
 
 
