@@ -100,7 +100,7 @@ umur = 23
 umur_dalam_hexadesimal = 0x17
 diskon = 0.15
 is_mahasiswa = True
-
+```
 
  - Operasi aritmatika, termasuk +, -, *, /, **, dan %
 
