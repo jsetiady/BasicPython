@@ -9,6 +9,15 @@ Materi workshop **Basic Python dan Implementasinya untuk Analisis Data** untuk a
  - Python versi 3, atau (*alternatif jika tidak sempat install Python 3*) akun di Kaggle.com)
  - (optional) Pycharm versi terbaru dan stable, atau IDE lain sesuai preferensi
 
+
+
+
+----------
+
+
+
+
+
 # Intro
  
  Python, dan Javascript adalah bahasa pemrograman yang *trending** di akhir 2017 / awal 2018
@@ -73,6 +82,15 @@ Penjelasan lebih detil lihat di section paling bawah.
 
 Read more:
 https://www.codepolitan.com/5-library-python-untuk-data-science-59b774b6cad97
+
+
+
+
+----------
+
+
+
+
 
 # Basic Python
 ## Instalasi
@@ -636,6 +654,12 @@ my_file.close()
 
 
 
+
+----------
+
+
+
+
 # Analisis Data dengan Python
 
 ## Basic Statistics di Python
@@ -783,6 +807,11 @@ Melakukan load data, menginspeksi, dan memodifikasi data dengan Pandas. Melakuka
 
 ## Basic Statistics with Numpy
 Melakukan eksplorasi statistik dasar
+
+
+
+
+----------
 
 
 
