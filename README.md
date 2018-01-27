@@ -197,6 +197,7 @@ print("%.2f" % total)
 ```
 
 - Date and Time
+
 ```
 from datetime import datetime
 now = datetime.now()
