@@ -94,6 +94,8 @@ Objek utama `pandas` yang digunakan pada workshop ini adalah DataFrame, yaitu se
 
 ## Python Syntax
  - Variable dan tipe data, comments
+
+
 ```
 nama = "Joko Widodo" # Komentar dalam satu baris
 umur = 23
@@ -102,11 +104,17 @@ diskon = 0.15
 is_mahasiswa = True
 ```
 
+
+
  - Operasi aritmatika, termasuk +, -, *, /, **, dan %
+
+
 
 ```
 total_bayar = harga_total - (harga_total * diskon)
 ```
+
+
 
 ### (Sebagian) Coding Best Practices and Conventions
 
