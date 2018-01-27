@@ -58,17 +58,17 @@ Nama `pandas`  diturunkan dari panel data, yaitu economic term untuk multidimens
 Objek utama `pandas` yang digunakan pada workshop ini adalah DataFrame, yaitu sebuah struktur data dua dimensi, tabular, dan column-oriented, dengan label pada baris dan kolomnya. Contoh DataFrame adalah sebagai berikut:
 
      >>> frame
-	    total_bill	tip		sex		smoker	day	time	size
-    1	16.99		1.01	Female	No		Sun	Dinner	2
-    2	10.34		1.66	Male	No		Sun	Dinner	3
-    3	21.01		3.5		Male	No		Sun	Dinner	3
-    4	23.68		3.31	Male	No		Sun Dinner	2
-    5	24.59		3.61	Female	No		Sun Dinner	4
-    6	25.29		4.71	Male	No		Sun Dinner	4
-    7	8.77		2		Male	No		Sun Dinner	2
-    8	26.88		3.12	Male	No		Sun Dinner	4
-    9	15.04		1.96	Male	No		Sun Dinner	2
-    10	14.78		3.23	Male	No		Sun Dinner	2
+      total_bill  tip   sex   smoker  day time  size
+    1 16.99   1.01  Female  No    Sun Dinner  2
+    2 10.34   1.66  Male  No    Sun Dinner  3
+    3 21.01   3.5   Male  No    Sun Dinner  3
+    4 23.68   3.31  Male  No    Sun Dinner  2
+    5 24.59   3.61  Female  No    Sun Dinner  4
+    6 25.29   4.71  Male  No    Sun Dinner  4
+    7 8.77    2   Male  No    Sun Dinner  2
+    8 26.88   3.12  Male  No    Sun Dinner  4
+    9 15.04   1.96  Male  No    Sun Dinner  2
+    10  14.78   3.23  Male  No    Sun Dinner  2
 
 `pandas` juga punya kemampuan manipulasi data dari spreadsheets dan basis data relasional (seperti SQL). 
 
@@ -88,7 +88,7 @@ Objek utama `pandas` yang digunakan pada workshop ini adalah DataFrame, yaitu se
 # Basic Python
 ## Instalasi
  1. Kunjungi https://www.python.org/downloads/
- 2. Pilih latest version sesuai dengan OS Anda
+ 2. Pilih latest version sesuai dengan OS Kamu
  Versi Python yang digunakan pada workshop ini adalah Python 3.X.X
 3. Install IDE PyCharm Community Edition. Unduh lewat https://www.jetbrains.com/pycharm/download/#section=mac
 
@@ -276,8 +276,8 @@ Sebuah list tidak harus punya panjang yang tetap. Kamu bisa menambahkan item ke 
 ```
 letters = [‘a’, ‘b’, ‘c’]
 letters.append(‘d’)
-print len(letters)	# 4
-print letters		# ['a', 'b', 'c', 'd']
+print len(letters)  # 4
+print letters   # ['a', 'b', 'c', 'd']
 ```
 
 #### List Slicing
@@ -285,10 +285,25 @@ Kadang-kadang kita hanya ingin mengakses sebagian dari list
 ```
 letters = ['a', 'b', 'c', 'd', 'e']
 slice = letters[1:3]
-print slice		# ['b', 'c']
-print letters	# ['a', 'b', 'c', 'd', 'e']
+print slice   # ['b', 'c']
+print letters # ['a', 'b', 'c', 'd', 'e']
 ```
 Pada contoh diatas, mula-mula kita membuat list dengan nama letters. Kemudian, kita mengambil sebagian dari list tersebut, dan disimpan dalam variable list `slice`.  Kita mulai dari index 1, dan berlanjut hingga sebelum index ke 3.
+
+
+Berikut adalah syntax List slicing :
+
+    [start:end:stride]
+
+Start mendeskripsikan dimana slice dimulai (inklusif), dan end adalah dimana slice berakhir (eksklusif), dan stride mendeskripsikan jarak antar items pada sliced list.
+Contoh: stride = 2
+```
+l = [i ** 2 for i in range(1, 11)]
+# Should be [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+print l[2:9:2] # [9, 25, 49, 81]
+```
+
 
 #### Slicing Lists and Strings
 Kamu dapat men-`slice` sebuah string sama seperti sebuah list. String dapat diumpamakan sebagai list of characters: setiap karakter pada string adalah sebuah item pada list, mulai dari index 0.
@@ -309,7 +324,7 @@ print animals.index("bat")
 Kita juga dapat menyisipkan item dalam sebuah list
 ```
 animals.insert(1, "dog")
-print animals		# ["ant", "dog", "bat", "cat"]
+print animals   # ["ant", "dog", "bat", "cat"]
 ```
 
 #### For One and All
@@ -392,27 +407,394 @@ key "luck" isinya string
 
 Pada baris akhir, dicetak ke layar karakter "c". Kita mengakses dictionary pada key "fish" yang berisi list, kemudian kita dapat akses ke value pada index 0 pada list yang disimpan dalam key "fish"
 
+```
+prices = {"banana": 4,
+          "apple": 2,
+          "orange": 1.5,
+          "pear": 3}
+
+stock = {"banana": 6,
+         "apple": 0,
+         "orange": 32,
+         "pear": 15}
+
+for x in prices:
+  print x
+  print "price:%s" % prices[x]
+  print "stock:%s" % stock[x]
+```
+
+#### Join List
+```
+a = [1, 2, 3]
+b = [4, 5, 6]
+print a + b
+# prints [1, 2, 3, 4, 5, 6]
+```
+
 ## Loops
+### While
+
+Perintah `while` loop mirip dengan perintah if: dia akan mengeksekusi kode jika kondisi terpenuhi. Perbedaannya adalah while akan terus mengeksekusi selama kondisi adalah benar. 
+```
+count = 0
+
+if count < 5:
+  print "Hello, I am an if statement and count is", count
+
+while count < 5:
+  print "Hello, I am a while and count is", count
+  count += 1
+```
+
+```
+loop_condition = True
+
+while loop_condition:
+  print "I am a loop"
+  loop_condition = False
+```
+
+```
+choice = raw_input('Enjoying the course? (y/n)')
+
+while choice != 'y' and choice != 'n':  # Fill in the condition (before the colon)
+  choice = raw_input("Sorry, I didn't catch that. Enter again: ")
+```
+
+#### Break
+`Break` adalah perintah untuk "keluar dari look". Jalan alternatif untuk menghentikan eksekusi loop.
+
+Contoh penggunaan `break`:
+Pertama-tama buat while dengan sebuah kondisi yang selalu bernilai `true`.  Kemudian, menggunakan statement `if` definisikan kondisi berhenti. Isi blok `if` dengan perintah  `break`.
+
+```
+count = 0
+
+while True:
+  print count
+  count += 1
+  if count >= 10:
+    break
+```
+
+#### While / else
+Hal yang berbeda pada Python adalah bentuk perintah `while/else`. While/else mirip dengan `if/else`, namun perbedaannya adalah: blok *else* akan selalu dieksekusi ketika *loop condition* bernilai `False`. 
+
+Pada contoh ini, loop akan keluar / break jika A = 5, sehingga `else` tidak akan dieksekusi. Jika tidak, setelah 3 bilangan dibangkitkan, *loop condition* akan bernilai `False`, sehingga `else` akan dieksekusi.
+```
+from random import randint
+
+# Generates a number from 1 through 10 inclusive
+random_number = randint(1, 10)
+
+guesses_left = 3
+# Start your game!
+while guesses_left > 0:
+  guess = int(raw_input("Your guess: "))
+  if guess == random_number:
+    print "You win!"
+    break
+  guesses_left -= 1
+else:
+  print "You lose."
+```
+
+### For loop
+Cara lain untuk melakukan loop adalah dengan perintah `for`
+
+```
+print "Counting..."
+
+for i in range(9):
+  print i
+  
+```
+
+```
+d = {'a': 'apple', 'b': 'berry', 'c': 'cherry'}
+
+for key in d:
+  print key + " " + d[key]
+```
+
+#### Multiple lists
+Jika ingin iterasi pada dua list dalam satu waktu, fungsi `zip` akan membantu 
+
+zip akan membuah pasangan element, dan akan berhenti pada elemen terakhir list yang panjangnya lebih pendek
+
+`zip` juga bisa menangani tiga atau lebih list
+```
+list_a = [3, 9, 17, 15, 19]
+list_b = [2, 4, 8, 10, 30, 40, 50, 60, 70, 80, 90]
+
+for a, b in zip(list_a, list_b):
+  # Add your code here!
+    print max(a, b)
+```
+
+#### For / else
+Sama seperti `while`,  *for* loops juga punya *else*.
+
+Pada kasus ini, jika statement else dieksekusi setelah for, tapi hanya jika for berakhir secara normal (tidak terkena break)
+
+```
+fruits = ['banana', 'apple', 'orange', 'tomato', 'pear', 'grape']
+
+print 'You have...'
+for f in fruits:
+  if f == 'tomato':
+    print 'A tomato is not a fruit!' # (It actually is.)
+    break
+  print 'A', f
+else:
+  print 'A fine selection of fruits!'
+```
 
 
 ## Class
+Python adalah sebuah bahasa pemrograman berorientasi objek. Untuk mudahnya, kamu dapat mengganggap objek sebagai sebuah struktur data tunggal yang mengandung data dan fungsi. Fungsi pada objek disebut *method*. Sebagai contoh: ketika kamu memanggil
+
+    len("Eric")
+
+Python akan memeriksa apakah string object yang kamu lewatkan punya atribut panjang, dan jika ada, maka value yang terasosiasi dengan atribut tersebut akan dikembalikan.
+
+    my_dict.items()
+
+Python akan memeriksa apakan my_dict punya method `items()`, dan mengeksekusi method tersebut jika menemukannya.
+
+#### Iterating Over Dictionaries
+```
+movies = {
+  "Monty Python and the Holy Grail": "Great",
+  "Monty Python's Life of Brian": "Good",
+  "Monty Python's Meaning of Life": "Okay"
+}
+
+print movies.items()
+```
+
+### Class Syntax
+Sebuah basic class hanya terdiri dari keyword class, nama kelas.
+
+```
+class NewClass(object):
+  # magic here
+```
+
+```
+class Animal(object):
+  def __init__(self): --> inisialisasi / kontruktor
+    pass
+
+class Animal(object):
+  def __init__(self, name):
+    self.name = name
+    
+zebra = Animal("Jeffrey")
+
+print zebra.name
+```
+
+```
+class Animal(object):
+  """Makes cute animals."""
+  is_alive = True
+  
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+    
+  def description(self):
+    print self.name
+    print self.age
+    
+hippo = Animal("Anderson", 36)
+hippo.description()
+```
+
 ## File input/output
+Bagaimana jika kamu ingin membaca informasi dari sebuah file pada komputer kamu, dan/atau menulis informasi ke file. 
+
+Proses tersebut disebut file I/O (I/O singkatan dari  "input/output")
+```
+my_list = [i ** 2 for i in range(1, 11)]
+# Generates a list of squares of the numbers 1 - 10
+
+f = open("output.txt", "w")
+
+for item in my_list:
+  f.write(str(item) + "\n")
+
+f.close()
+
+```
+
+```
+my_file = open("output.txt", "r+")
+
+my_list = [i ** 2 for i in range(1, 11)]
+
+my_file = open("output.txt", "w")
+
+for value in my_list:
+  my_file.write(str(value) + "\n")
+  
+my_file.close()
+```
+
 
 
 # Analisis Data dengan Python
 
+## Basic Statistics di Python
+
+### Sum
+```
+grades = [100, 100, 90, 40, 80, 100, 85, 70, 90, 65, 90, 85, 50.5]
+
+def grades_sum(scores):
+  total = 0
+  for score in scores: 
+    total += score
+  return total
+
+print grades_sum(grades)
+```
+### Average
+```
+grades = [100, 100, 90, 40, 80, 100, 85, 70, 90, 65, 90, 85, 50.5]
+
+def grades_sum(scores):
+  total = 0
+  for score in scores: 
+    total += score
+  return total
+
+print grades_sum(grades)
+
+def grades_average(grades_input):
+  sum_of_grades = grades_sum(grades_input)
+  average = sum_of_grades / float(len(grades_input))
+  return average
+
+print grades_average(grades)
+```
+
+### Median
+Media adalah bilangan tengah pada sekuens bilangan yang terurut.
+
+Kamu bisa menurutkan sekuens dengan fungsi `sorted()`:
+
+```
+sorted([5, 2, 3, 1, 4])
+[1, 2, 3, 4, 5]
+```
+
+```
+def median(lst):
+    sorted_list = sorted(lst)
+    if len(sorted_list) % 2 != 0:
+        #odd number of elements
+        index = len(sorted_list)//2 
+        return sorted_list[index]
+    elif len(sorted_list) % 2 == 0:
+        #even no. of elements
+        index_1 = len(sorted_list)/2 - 1
+        index_2 = len(sorted_list)/2
+        mean = (sorted_list[index_1] + sorted_list[index_2])/2.0
+        return mean
+   
+print median([2, 4, 5, 9])
+```
+
+### Variance
+Mari kita lihat bagaimana nilainya bervariasi terhadap rata-rata / menghitung variance.
+
+Variance yang sangat besar artinya nilai siswa sangat beragam, sedangkan variance yang kecil (dekat dengan rata-rata) artinya mayoritas siswa punya nilai yang kira-kira mirip
+
+```
+grades = [100, 100, 90, 40, 80, 100, 85, 70, 90, 65, 90, 85, 50.5]
+
+def print_grades(grades_input):
+  for grade in grades_input:
+    print grade
+
+def grades_sum(scores):
+  total = 0
+  for score in scores: 
+    total += score
+  return total
+    
+def grades_average(grades_input):
+  sum_of_grades = grades_sum(grades_input)
+  average = sum_of_grades / float(len(grades_input))
+  return average
+
+def grades_variance(grades):
+    variance = 0
+    for number in grades:
+        variance += (grades_average(grades) - number) ** 2
+    return variance / len(grades)
+
+print grades_variance(grades)
+
+```
+
+### Standar Deviasi
+Standar deviasi adalah kuadrat dari variance. 
+```
+grades = [100, 100, 90, 40, 80, 100, 85, 70, 90, 65, 90, 85, 50.5]
+
+def print_grades(grades_input):
+  for grade in grades_input:
+    print grade
+
+def grades_sum(scores):
+  total = 0
+  for score in scores: 
+    total += score
+  return total
+    
+def grades_average(grades_input):
+  sum_of_grades = grades_sum(grades_input)
+  average = sum_of_grades / float(len(grades_input))
+  return average
+
+def grades_variance(grades):
+    variance = 0
+    for number in grades:
+        variance += (grades_average(grades) - number) ** 2
+    return variance / len(grades)
+
+def grades_std_deviation(variance):
+  return variance ** 0.5
+
+variance = grades_variance(grades)
+
+print grades_std_deviation(variance)
+```
+
+Sekarang coba kalian gunakan kode diatas untuk mencetak:
+- Semua nilai siswa
+- Jumlah dari nilai siswa
+- Rata-rata nilai
+- Variance
+- Standar Deviasi
+
+
 ## Visualisasi Data dengan Matplotlib
 Membuat grafik dengan Matplotlib untuk menyajikan data atau temuan hasil analisis data
+
 
 ## Data Analysis with Pandas
 Melakukan load data, menginspeksi, dan memodifikasi data dengan Pandas. Melakukan data analisis.
 
-
 ## Basic Statistics with Numpy
 Melakukan eksplorasi statistik dasar
 
-## Comparative Statistics with Scipy
-Merancang A/B testing, dan menunjukkan perbandingan data (dasar untuk data driven decisions)
+
+
 
 
 
