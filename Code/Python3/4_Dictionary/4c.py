@@ -13,8 +13,8 @@ for x in prices:
   print ("price:%s" % prices[x])
   print ("stock:%s" % stock[x])
 
-print "======="
-print "Latihan"
+print ("=======")
+print ("Latihan")
 
 # Latihan
 # Tambahkan key "watermelon" pada prices dan stock. Isi value bebas
