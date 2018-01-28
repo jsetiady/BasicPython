@@ -4,6 +4,9 @@ Materi workshop **Basic Python dan Implementasinya untuk Analisis Data** untuk a
 
 *Workshop material of **Basic Python dan Implementasinya untuk Analisis Data** for event **LPDP ITB SmartWeekend** January 27-28th 2018.* 
 
+Link to slides
+https://slides.com/jessiesetiady/basicpython/fullscreen
+
 ## Apa saja yang dibutuhkan?
 
  - Python versi 2.7 / versi 3, atau (*alternatif jika tidak sempat install Python 3*) akun di Kaggle.com)
