@@ -6,7 +6,7 @@ Materi workshop **Basic Python dan Implementasinya untuk Analisis Data** untuk a
 
 ## Apa saja yang dibutuhkan?
 
- - Python versi 3, atau (*alternatif jika tidak sempat install Python 3*) akun di Kaggle.com)
+ - Python versi 2.7 / versi 3, atau (*alternatif jika tidak sempat install Python 3*) akun di Kaggle.com)
  - (optional) Pycharm versi terbaru dan stable, atau IDE lain sesuai preferensi
 
 
@@ -798,15 +798,29 @@ Sekarang coba kalian gunakan kode diatas untuk mencetak:
 - Standar Deviasi
 
 
-## Visualisasi Data dengan Matplotlib
-Membuat grafik dengan Matplotlib untuk menyajikan data atau temuan hasil analisis data
+
+## Basic Statistics with Numpy
+Melakukan eksplorasi statistik dasar
+Materi diambil dari:
+http://cs231n.github.io/python-numpy-tutorial/
 
 
 ## Data Analysis with Pandas
 Melakukan load data, menginspeksi, dan memodifikasi data dengan Pandas. Melakukan data analisis.
+Materi diambil dari:
+https://www.learnpython.org/en/Pandas_Basics
 
-## Basic Statistics with Numpy
-Melakukan eksplorasi statistik dasar
+More here:
+https://pandas.pydata.org/pandas-docs/stable/10min.html
+
+
+## Visualisasi Data dengan Matplotlib
+Membuat grafik dengan Matplotlib untuk menyajikan data atau temuan hasil analisis data
+Materi diambil dari:
+http://cs231n.github.io/python-numpy-tutorial/
+
+
+
 
 
 
